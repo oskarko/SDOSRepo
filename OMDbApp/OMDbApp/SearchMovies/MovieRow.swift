@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct MovieRow: View {
   private let viewModel: MovieRowViewModel
@@ -17,23 +18,24 @@ struct MovieRow: View {
   
   var body: some View {
     HStack {
+        URLImage(URL(string:"\(viewModel.poster)")!,
+        delay: 0.25,
+        processors: [ Resize(size: CGSize(width: 50.0, height: 100.0), scale: UIScreen.main.scale) ],
+        content:  {
+            $0.image
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .clipped()
+        })
+            .frame(width: 50.0, height: 100.0)
+        
+        
       VStack {
-        Text("\(viewModel.title)")
-        Text("\(viewModel.year)")
+        Text("\(viewModel.title)").font(.headline)
+        Text("\(viewModel.year)").font(.subheadline)
       }
-      
-      VStack(alignment: .leading) {
-        Text("\(viewModel.title)")
-          .font(.body)
-        Text("\(viewModel.year)")
-          .font(.footnote)
-      }
-        .padding(.leading, 8)
-
-      Spacer()
-
-      Text("\(viewModel.year)°")
-        .font(.title)
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
     }
+    
   }
 }

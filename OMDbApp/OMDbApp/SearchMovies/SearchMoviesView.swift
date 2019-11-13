@@ -21,10 +21,9 @@ struct SearchMoviesView: View {
         searchField
 
         if viewModel.dataSource.isEmpty {
-          emptySection
+            emptySection
         } else {
-          detailMovieSection
-          fetchSection
+            fetchSection
         }
       }
         .listStyle(GroupedListStyle())
@@ -42,20 +41,12 @@ private extension SearchMoviesView {
 
   var fetchSection: some View {
     Section {
-      ForEach(viewModel.dataSource, content: MovieRow.init(viewModel:))
-    }
-  }
-
-  var detailMovieSection: some View {
-    Section {
-      NavigationLink(destination: viewModel.moviesView) {
-        VStack(alignment: .leading) {
-          Text(viewModel.title)
-          Text("Movies:::")
-            .font(.caption)
-            .foregroundColor(.gray)
+        
+        NavigationLink(destination: viewModel.moviesView) {
+          VStack(alignment: .leading) {
+            ForEach(viewModel.dataSource, content: MovieRow.init(viewModel:))
+          }
         }
-      }
     }
   }
 

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,7 @@
 		30B6662D237B060A00AC85C3 /* CurrentMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B6662C237B060A00AC85C3 /* CurrentMovieViewModel.swift */; };
 		30B6662F237B069100AC85C3 /* CurrentMovieRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B6662E237B069100AC85C3 /* CurrentMovieRowViewModel.swift */; };
 		30B66631237B07C500AC85C3 /* CurrentMovieRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B66630237B07C500AC85C3 /* CurrentMovieRow.swift */; };
+		30BAD43A237C09DD005D2FDF /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 30BAD439237C09DD005D2FDF /* URLImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30BAD43A237C09DD005D2FDF /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +201,9 @@
 			dependencies = (
 			);
 			name = OMDbApp;
+			packageProductDependencies = (
+				30BAD439237C09DD005D2FDF /* URLImage */,
+			);
 			productName = OMDbApp;
 			productReference = 30B665EE237AEF6100AC85C3 /* OMDbApp.app */;
 			productType = "com.apple.product-type.application";
@@ -249,6 +254,9 @@
 				Base,
 			);
 			mainGroup = 30B665E5237AEF6100AC85C3;
+			packageReferences = (
+				30BAD438237C09DD005D2FDF /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 30B665EF237AEF6100AC85C3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -561,6 +569,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		30BAD438237C09DD005D2FDF /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		30BAD439237C09DD005D2FDF /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30BAD438237C09DD005D2FDF /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 30B665E6237AEF6100AC85C3 /* Project object */;
 }

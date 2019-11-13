@@ -28,7 +28,7 @@ class SearchMoviesViewModel: ObservableObject {
     func fetchMovies(forTitle title: String) {
         moviesFetcher.searchMovies(forTitle: title)
             .map { response in
-                response.list.map(MovieRowViewModel.init)
+                response.Search.map(MovieRowViewModel.init)
         }
         //.map(Array.removeDuplicates)
         .receive(on: DispatchQueue.main)

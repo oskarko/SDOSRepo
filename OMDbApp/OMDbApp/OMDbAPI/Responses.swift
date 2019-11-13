@@ -9,7 +9,7 @@
 import Foundation
 
 struct SearchMoviesResponse: Codable {
-    let list: [Item]
+    let Search: [Item]
     
     struct Item: Codable {
         let title: String
