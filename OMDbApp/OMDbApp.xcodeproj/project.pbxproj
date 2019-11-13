@@ -27,6 +27,7 @@
 		30B6662F237B069100AC85C3 /* CurrentMovieRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B6662E237B069100AC85C3 /* CurrentMovieRowViewModel.swift */; };
 		30B66631237B07C500AC85C3 /* CurrentMovieRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B66630237B07C500AC85C3 /* CurrentMovieRow.swift */; };
 		30BAD43A237C09DD005D2FDF /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 30BAD439237C09DD005D2FDF /* URLImage */; };
+		E2020BCB237C85B500969BA5 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2020BCA237C85B500969BA5 /* ActivityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		30B6662C237B060A00AC85C3 /* CurrentMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMovieViewModel.swift; sourceTree = "<group>"; };
 		30B6662E237B069100AC85C3 /* CurrentMovieRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMovieRowViewModel.swift; sourceTree = "<group>"; };
 		30B66630237B07C500AC85C3 /* CurrentMovieRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMovieRow.swift; sourceTree = "<group>"; };
+		E2020BCA237C85B500969BA5 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 		30B66625237B035B00AC85C3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E2020BC9237C859900969BA5 /* ActivityViewController */,
 				30B66626237B036D00AC85C3 /* Parsing */,
 			);
 			path = Utils;
@@ -183,6 +186,14 @@
 				30B6662E237B069100AC85C3 /* CurrentMovieRowViewModel.swift */,
 			);
 			path = CurrentMovie;
+			sourceTree = "<group>";
+		};
+		E2020BC9237C859900969BA5 /* ActivityViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E2020BCA237C85B500969BA5 /* ActivityViewController.swift */,
+			);
+			path = ActivityViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +306,7 @@
 				30B665F2237AEF6100AC85C3 /* AppDelegate.swift in Sources */,
 				30B66622237AFA7700AC85C3 /* MovieRow.swift in Sources */,
 				30B6662F237B069100AC85C3 /* CurrentMovieRowViewModel.swift in Sources */,
+				E2020BCB237C85B500969BA5 /* ActivityViewController.swift in Sources */,
 				30B66615237AF19200AC85C3 /* SearchMoviesView.swift in Sources */,
 				30B6662D237B060A00AC85C3 /* CurrentMovieViewModel.swift in Sources */,
 				30B6662B237B059E00AC85C3 /* CurrentMovieView.swift in Sources */,

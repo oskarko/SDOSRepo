@@ -54,17 +54,17 @@ struct CurrentMovieRow: View {
                 Text("\(viewModel.plot)").font(.subheadline)
             }
             
-            VStack(alignment: .leading) {
-                Text("Website:").font(.headline)
-                Text("\(viewModel.website)").font(.subheadline)
-                
-                Button(action: {}) {
-                    HStack {
-                        Text("Sign In")
-                        Spacer()
-                    }
-                }.background(Color.green)
-            }
+//            VStack(alignment: .leading) {
+//                Text("Website:").font(.headline)
+//                Text("\(viewModel.website)").font(.subheadline)
+//
+////                Button(action: {}) {
+////                    HStack {
+////                        Text("Sign In")
+////                        Spacer()
+////                    }
+////                }.background(Color.green)
+//            }
             
         }
         
