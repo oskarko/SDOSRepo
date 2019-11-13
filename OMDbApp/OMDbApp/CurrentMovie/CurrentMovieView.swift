@@ -38,7 +38,7 @@ private extension CurrentMovieView {
   }
 
   var loading: some View {
-    Text("Loading \(viewModel.title)'s info...")
+    Text("Loading \(viewModel.imdbID)'s info...")
       .foregroundColor(.gray)
   }
 }

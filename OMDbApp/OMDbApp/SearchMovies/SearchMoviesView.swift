@@ -41,11 +41,10 @@ private extension SearchMoviesView {
 
   var fetchSection: some View {
     Section {
-        
-        NavigationLink(destination: viewModel.moviesView) {
-          VStack(alignment: .leading) {
-            ForEach(viewModel.dataSource, content: MovieRow.init(viewModel:))
-          }
+        ForEach(viewModel.dataSource) { movie in
+            NavigationLink(destination: self.viewModel.details(movie: movie)) {
+                MovieRow.init(viewModel:movie)
+            }
         }
     }
   }

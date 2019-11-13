@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct CurrentMovieRow: View {
     private let viewModel: CurrentMovieRowViewModel
@@ -17,31 +18,112 @@ struct CurrentMovieRow: View {
     
     var body: some View {
         
-        VStack(alignment: .leading) {
+        VStack(spacing: 50) {
             HStack {
-                Text("☀️ Title:")
-                Text("\(viewModel.title)°")
-                    .foregroundColor(.gray)
+                URLImage(URL(string:"\(viewModel.poster)")!,
+                         delay: 0.25,
+                         processors: [ Resize(size: CGSize(width: 150.0, height: 300.0), scale: UIScreen.main.scale) ],
+                         content:  {
+                            $0.image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .clipped()
+                })
+                .frame(width: 160.0, height: 320.0)
+                
+                VStack(alignment: .leading, spacing: 16) {
+                    
+                    VStack {
+                        Text("Gen.:").font(.headline)
+                        Text("\(viewModel.genre)").font(.subheadline)
+                    }
+                    VStack {
+                        Text("Released at:").font(.headline)
+                        Text("\(viewModel.released)").font(.subheadline)
+                    }
+                    VStack {
+                        Text("Duration:").font(.headline)
+                        Text("\(viewModel.duration)").font(.subheadline)
+                    }
+                }
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
             }
             
-            HStack {
-                Text("📈 Year:")
-                Text("\(viewModel.year)°")
-                    .foregroundColor(.gray)
+            VStack(alignment: .leading) {
+                Text("Plot:").font(.headline)
+                Text("\(viewModel.plot)").font(.subheadline)
             }
             
-            HStack {
-                Text("📉 id:")
-                Text("\(viewModel.id)°")
-                    .foregroundColor(.gray)
+            VStack(alignment: .leading) {
+                Text("Website:").font(.headline)
+                Text("\(viewModel.website)").font(.subheadline)
+                
+                Button(action: {}) {
+                    HStack {
+                        Text("Sign In")
+                        Spacer()
+                    }
+                }.background(Color.green)
             }
             
-            HStack {
-                Text("💧 Poster:")
-                Text(viewModel.poster)
-                    .foregroundColor(.gray)
-            }
         }
+        
+        
+        //        VStack(alignment: .leading) {
+        //            HStack {
+        //                Text("☀️ Title:")
+        //                Text("\(viewModel.title)°")
+        //                    .foregroundColor(.gray)
+        //            }
+        //
+        //            HStack {
+        //                Text("📈 Year:")
+        //                Text("\(viewModel.year)°")
+        //                    .foregroundColor(.gray)
+        //            }
+        //
+        //            HStack {
+        //                Text("📉 id:")
+        //                Text("\(viewModel.id)°")
+        //                    .foregroundColor(.gray)
+        //            }
+        //
+        //            HStack {
+        //                Text("💧 Poster:")
+        //                Text(viewModel.poster)
+        //                    .foregroundColor(.gray)
+        //            }
+        //
+        //            HStack {
+        //                Text("💧 Released at:")
+        //                Text(viewModel.released)
+        //                    .foregroundColor(.gray)
+        //            }
+        //
+        //            HStack {
+        //                Text("💧 Gen.:")
+        //                Text(viewModel.genre)
+        //                    .foregroundColor(.gray)
+        //            }
+        //
+        //            HStack {
+        //                Text("💧 Duration:")
+        //                Text(viewModel.duration)
+        //                    .foregroundColor(.gray)
+        //            }
+        //
+        //            HStack {
+        //                Text("💧 Plot:")
+        //                Text(viewModel.plot)
+        //                    .foregroundColor(.gray)
+        //            }
+        //
+        //            HStack {
+        //                Text("💧 Website:")
+        //                Text(viewModel.website)
+        //                    .foregroundColor(.gray)
+        //            }
+        //        }
     }
 }
 

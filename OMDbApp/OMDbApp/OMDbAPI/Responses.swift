@@ -28,26 +28,6 @@ struct SearchMoviesResponse: Codable {
             case poster = "Poster"
         }
     }
-    //
-    //    struct MainClass: Codable {
-    //    let temp: Double
-    //  }
-    //
-    //  struct Weather: Codable {
-    //    let main: MainEnum
-    //    let weatherDescription: String
-    //
-    //    enum CodingKeys: String, CodingKey {
-    //      case main
-    //      case weatherDescription = "description"
-    //    }
-    //  }
-    
-    //  enum MainEnum: String, Codable {
-    //    case clear = "Clear"
-    //    case clouds = "Clouds"
-    //    case rain = "Rain"
-    //  }
 }
 
 struct SearchMovieResponse: Decodable {
@@ -57,6 +37,11 @@ struct SearchMovieResponse: Decodable {
     let imdbID: String
     let type: String
     let poster: String
+    let released: String
+    let genre: String
+    let duration: String
+    let plot: String
+    let web: String
     
     //    struct Item: Codable {
     //        let title: String
@@ -73,5 +58,10 @@ struct SearchMovieResponse: Decodable {
         case imdbID = "imdbID"
         case type = "Type"
         case poster = "Poster"
+        case released = "Released"
+        case genre = "Genre"
+        case duration = "Runtime"
+        case plot = "Plot"
+        case web = "Website"
     }
 }

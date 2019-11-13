@@ -13,18 +13,21 @@ class CurrentMovieViewModel: ObservableObject {
     
     @Published var dataSource: CurrentMovieRowViewModel?
     
+    let imdbID: String
     let title: String
     private let movieFetcher: MovieFetchable
     private var disposables = Set<AnyCancellable>()
     
-    init(title: String, movieFetcher: MovieFetchable) {
-        self.movieFetcher = movieFetcher
+    init(imdbID: String, title: String) {
+        movieFetcher = MovieFetcher()
+        self.imdbID = imdbID
         self.title = title
+        refresh()
     }
     
     func refresh() {
         movieFetcher
-            .searchMovie(forID: title)
+            .searchMovie(forID: imdbID)
             .map(CurrentMovieRowViewModel.init)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] value in
@@ -35,9 +38,9 @@ class CurrentMovieViewModel: ObservableObject {
                 case .finished:
                     break
                 }
-                }, receiveValue: { [weak self] weather in
+                }, receiveValue: { [weak self] movie in
                     guard let self = self else { return }
-                    self.dataSource = weather
+                    self.dataSource = movie
             })
             .store(in: &disposables)
     }

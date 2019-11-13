@@ -30,7 +30,6 @@ class SearchMoviesViewModel: ObservableObject {
             .map { response in
                 response.Search.map(MovieRowViewModel.init)
         }
-        //.map(Array.removeDuplicates)
         .receive(on: DispatchQueue.main)
         .sink(
             receiveCompletion: { [weak self] value in
@@ -48,10 +47,9 @@ class SearchMoviesViewModel: ObservableObject {
         })
             .store(in: &disposables)
     }
-}
-
-extension SearchMoviesViewModel {
-    var moviesView: some View {
-        return  SearchMoviesBuilder.makeCurrentMovieView(withTitle: title, moviesFetcher: moviesFetcher)
+    
+    func details(movie: MovieRowViewModel) -> some View {
+        let viewModel = CurrentMovieViewModel(imdbID: movie.id, title: movie.title)
+        return CurrentMovieView(viewModel: viewModel)
     }
 }

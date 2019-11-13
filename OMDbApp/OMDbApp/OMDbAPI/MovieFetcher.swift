@@ -79,7 +79,7 @@ private extension MovieFetcher {
     components.path = OpenWeatherAPI.path
     
     components.queryItems = [
-      URLQueryItem(name: "t", value: movieID),
+      URLQueryItem(name: "i", value: movieID),
       URLQueryItem(name: "type", value: "movie"),
       URLQueryItem(name: "apikey", value: OpenWeatherAPI.key)
     ]

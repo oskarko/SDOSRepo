@@ -29,6 +29,26 @@ struct CurrentMovieRowViewModel {
         return item.poster
     }
     
+    var released: String {
+        return item.released
+    }
+    
+    var genre: String {
+        return item.genre
+    }
+    
+    var duration: String {
+        return item.duration
+    }
+    
+    var plot: String {
+        return item.plot
+    }
+    
+    var website: String {
+        return item.web
+    }
+    
     init(item: SearchMovieResponse) {
         self.item = item
     }

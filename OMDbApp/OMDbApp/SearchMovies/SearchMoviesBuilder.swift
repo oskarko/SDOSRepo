@@ -10,8 +10,8 @@ import SwiftUI
 
 enum SearchMoviesBuilder {
     
-    static func makeCurrentMovieView(withTitle title: String, moviesFetcher: MovieFetchable) -> some View {
-        let viewModel = CurrentMovieViewModel(title: title, movieFetcher: moviesFetcher)
-        return CurrentMovieView(viewModel: viewModel)
-    }
+//    static func makeCurrentMovieView(withTitle title: String, moviesFetcher: MovieFetchable) -> some View {
+//        let viewModel = CurrentMovieViewModel(imdbID: title, movieFetcher: moviesFetcher)
+//        return CurrentMovieView(viewModel: viewModel)
+//    }
 }
