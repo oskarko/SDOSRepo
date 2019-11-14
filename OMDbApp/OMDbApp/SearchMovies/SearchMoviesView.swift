@@ -16,33 +16,33 @@ struct SearchMoviesView: View {
     self.viewModel = viewModel
   }
   
-  var body: some View {
-    ZStack{
-        NavigationView {
-            
-            List {
-                searchField
+    var body: some View {
+        ZStack{
+            NavigationView {
                 
-                if viewModel.dataSource.isEmpty {
-                    emptySection
-                } else {
-                    fetchSection
+                List {
+                    searchField
+                    
+                    if viewModel.dataSource.isEmpty {
+                        emptySection
+                    } else {
+                        fetchSection
+                    }
                 }
+                .listStyle(GroupedListStyle())
+                .navigationBarTitle("Movies 🎬")
             }
-            .listStyle(GroupedListStyle())
-            .navigationBarTitle("Movies ⛅️")
+            SplashScreen()
+                .opacity(showSplash ? 1 : 0)
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                        SplashScreen.shouldAnimate = false
+                        withAnimation() {
+                            self.showSplash = false
+                        }
+                    }
+            }
         }
-//        SplashScreen()
-//            .opacity(showSplash ? 1 : 0)
-//            .onAppear {
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-//                    SplashScreen.shouldAnimate = false
-//                    withAnimation() {
-//                        self.showSplash = false
-//                    }
-//                }
-//        }
-    }
     }
 }
 
