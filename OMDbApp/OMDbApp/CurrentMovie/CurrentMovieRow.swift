@@ -20,6 +20,7 @@ struct CurrentMovieRow: View {
         
         VStack(spacing: 50) {
             HStack {
+                VStack {
                 URLImage(URL(string:"\(viewModel.poster)")!,
                          delay: 0.25,
                          processors: [ Resize(size: CGSize(width: 150.0, height: 300.0), scale: UIScreen.main.scale) ],
@@ -31,6 +32,7 @@ struct CurrentMovieRow: View {
                 })
                 .frame(width: 160.0, height: 320.0)
                 
+                }
                 VStack(alignment: .leading, spacing: 16) {
                     
                     VStack {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		308F34C7237D8037006F225E /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308F34C6237D8037006F225E /* SplashScreen.swift */; };
 		30B665F2237AEF6100AC85C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B665F1237AEF6100AC85C3 /* AppDelegate.swift */; };
 		30B665F4237AEF6100AC85C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B665F3237AEF6100AC85C3 /* SceneDelegate.swift */; };
 		30B665F8237AEF6300AC85C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30B665F7237AEF6300AC85C3 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		308F34C6237D8037006F225E /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		30B665EE237AEF6100AC85C3 /* OMDbApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OMDbApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B665F1237AEF6100AC85C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30B665F3237AEF6100AC85C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				30B6661A237AF46100AC85C3 /* OMDbAPI */,
 				30B665F1237AEF6100AC85C3 /* AppDelegate.swift */,
 				30B665F3237AEF6100AC85C3 /* SceneDelegate.swift */,
+				308F34C6237D8037006F225E /* SplashScreen.swift */,
 				30B665F7237AEF6300AC85C3 /* Assets.xcassets */,
 				30B665FC237AEF6300AC85C3 /* LaunchScreen.storyboard */,
 				30B665FF237AEF6300AC85C3 /* Info.plist */,
@@ -312,6 +315,7 @@
 				30B6662B237B059E00AC85C3 /* CurrentMovieView.swift in Sources */,
 				30B665F4237AEF6100AC85C3 /* SceneDelegate.swift in Sources */,
 				30B66628237B038300AC85C3 /* Parsing.swift in Sources */,
+				308F34C7237D8037006F225E /* SplashScreen.swift in Sources */,
 				30B66620237AF4B200AC85C3 /* MovieError.swift in Sources */,
 				30B66619237AF27600AC85C3 /* MovieRowViewModel.swift in Sources */,
 				30B66631237B07C500AC85C3 /* CurrentMovieRow.swift in Sources */,

@@ -10,26 +10,40 @@ import SwiftUI
 
 struct SearchMoviesView: View {
   @ObservedObject var viewModel: SearchMoviesViewModel
+     @State var showSplash = true
 
   init(viewModel: SearchMoviesViewModel) {
     self.viewModel = viewModel
   }
   
   var body: some View {
-    NavigationView {
-      List {
-        searchField
-
-        if viewModel.dataSource.isEmpty {
-            emptySection
-        } else {
-            fetchSection
+    ZStack{
+        NavigationView {
+            
+            List {
+                searchField
+                
+                if viewModel.dataSource.isEmpty {
+                    emptySection
+                } else {
+                    fetchSection
+                }
+            }
+            .listStyle(GroupedListStyle())
+            .navigationBarTitle("Movies ⛅️")
         }
-      }
-        .listStyle(GroupedListStyle())
-        .navigationBarTitle("Movies ⛅️")
+        SplashScreen()
+            .opacity(showSplash ? 1 : 0)
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                    SplashScreen.shouldAnimate = false
+                    withAnimation() {
+                        self.showSplash = false
+                    }
+                }
+        }
     }
-  }
+    }
 }
 
 private extension SearchMoviesView {
