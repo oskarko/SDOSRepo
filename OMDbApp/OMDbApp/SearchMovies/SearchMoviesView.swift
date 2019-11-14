@@ -32,41 +32,41 @@ struct SearchMoviesView: View {
             .listStyle(GroupedListStyle())
             .navigationBarTitle("Movies ⛅️")
         }
-        SplashScreen()
-            .opacity(showSplash ? 1 : 0)
-            .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-                    SplashScreen.shouldAnimate = false
-                    withAnimation() {
-                        self.showSplash = false
-                    }
-                }
-        }
+//        SplashScreen()
+//            .opacity(showSplash ? 1 : 0)
+//            .onAppear {
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+//                    SplashScreen.shouldAnimate = false
+//                    withAnimation() {
+//                        self.showSplash = false
+//                    }
+//                }
+//        }
     }
     }
 }
 
 private extension SearchMoviesView {
-  var searchField: some View {
-    HStack(alignment: .center) {
-      TextField("e.g. Matrix", text: $viewModel.title)
+    var searchField: some View {
+        HStack(alignment: .center) {
+            TextField("e.g. Matrix", text: $viewModel.title)
+        }
     }
-  }
-
-  var fetchSection: some View {
-    Section {
-        ForEach(viewModel.dataSource) { movie in
-            NavigationLink(destination: self.viewModel.details(movie: movie)) {
-                MovieRow.init(viewModel:movie)
+    
+    var fetchSection: some View {
+        Section {
+            ForEach(viewModel.dataSource) { movie in
+                NavigationLink(destination: self.viewModel.details(movie: movie)) {
+                    MovieRow.init(viewModel:movie)
+                }
             }
         }
     }
-  }
-
-  var emptySection: some View {
-    Section {
-      Text("No results")
-        .foregroundColor(.gray)
+    
+    var emptySection: some View {
+        Section {
+            Text("No results")
+                .foregroundColor(.gray)
+        }
     }
-  }
 }

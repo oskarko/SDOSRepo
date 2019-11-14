@@ -41,9 +41,9 @@ class SearchMoviesViewModel: ObservableObject {
                     break
                 }
             },
-            receiveValue: { [weak self] forecast in
+            receiveValue: { [weak self] movie in
                 guard let self = self else { return }
-                self.dataSource = forecast
+                self.dataSource = movie
         })
             .store(in: &disposables)
     }

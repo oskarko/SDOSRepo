@@ -17,8 +17,6 @@ struct SearchMoviesResponse: Codable {
         let imdbID: String
         let type: String
         let poster: String
-        //    let main: MainClass
-        //    let weather: [Weather]
         
         enum CodingKeys: String, CodingKey {
             case title = "Title"
@@ -42,15 +40,6 @@ struct SearchMovieResponse: Decodable {
     let duration: String
     let plot: String
     let web: String
-    
-    //    struct Item: Codable {
-    //        let title: String
-    //        let year: String
-    //        let imdbID: String
-    //        let type: String
-    //        let poster: String
-    //        //    let main: MainClass
-    //        //    let weather: [Weather]
     
     enum CodingKeys: String, CodingKey {
         case title = "Title"

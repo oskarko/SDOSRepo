@@ -9,6 +9,6 @@
 import Foundation
 
 enum MovieError: Error {
-  case parsing(description: String)
-  case network(description: String)
+    case parsing(description: String)
+    case network(description: String)
 }
